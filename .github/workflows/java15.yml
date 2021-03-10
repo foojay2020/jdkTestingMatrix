@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Set up ${{ matrix.package }}
-      uses: foojay2020/setup-java@adb2754170f8abe568d01d706a0927e606419852
+      uses: foojay2020/setup-java@disco
       with:
         java-package: ${{ matrix.package }}
         java-version: ${{ matrix.update }}

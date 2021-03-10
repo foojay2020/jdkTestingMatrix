@@ -26,7 +26,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK 8 OJDKBuild
-      uses: foojay2020/setup-java@adb2754170f8abe568d01d706a0927e606419852
+      uses: foojay2020/setup-java@disco
       with:
         java-version: 8.0.${{ matrix.update }}
         distro: ojdk_build
@@ -46,7 +46,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK 8 OJDKBuild
-      uses: foojay2020/setup-java@adb2754170f8abe568d01d706a0927e606419852
+      uses: foojay2020/setup-java@disco
       with:
         java-version: 8.0.${{ matrix.update }}
         distro: ojdk_build
@@ -67,7 +67,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK 8 OJDKBuild
-      uses: foojay2020/setup-java@adb2754170f8abe568d01d706a0927e606419852
+      uses: foojay2020/setup-java@disco
       with:
         java-package: jre
         java-version: 8.0.${{ matrix.update }}
