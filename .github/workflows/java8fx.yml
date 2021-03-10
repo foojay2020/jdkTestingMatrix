@@ -12,16 +12,18 @@ jobs:
       matrix:
         os: [ubuntu-18.04, windows-2016, macOS-latest]
         update: [x, 252, 242, 232, 222, 212, 202, 192]
+        distro: [zulu, aoj, liberica]
       fail-fast: false
       max-parallel: 5
-    name: JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}
+    name: JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}, ${{ matrix.distro }}
 
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK
-      uses: actions/setup-java@v1
+      uses: foojay2020/setup-java@disco
       with:
         java-version: 8.0.${{ matrix.update }}
         java-package: jdk+fx
+        distro: ${{ matrix.distro }}
     - name: java -version
       run: java -version

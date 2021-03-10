@@ -22,8 +22,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up JDK
-      uses: actions/setup-java@v1
+    - name: Set up JDK      
+      uses: foojay2020/setup-java@disco
       with:
         java-version: 14.0.${{ matrix.update }}
     - name: java -version

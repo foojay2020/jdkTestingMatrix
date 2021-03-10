@@ -1,12 +1,12 @@
-name: Java8
+name: Java8_Oracle_OpenJDK
 
 on:
   push:
     paths:
-      - '.github/workflows/java8.yml'
-  schedule:
+      - '.github/workflows/java8_oracle_open_jdk.yml'
+  #schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '45 */3 * * *'
+  #  - cron:  '45 */3 * * *'
 
 jobs:
   java8-jdk:
@@ -19,18 +19,17 @@ jobs:
         exclude:
           - os: ubuntu-18.04
             update: 101
-        distro: [zulu, aoj, liberica]    
       fail-fast: false
       max-parallel: 6
-    name: JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}, ${{ matrix.distro }}
+    name: JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up JDK      
+    - name: Set up JDK 8 OracleOpenJDK
       uses: foojay2020/setup-java@disco
       with:
         java-version: 8.0.${{ matrix.update }}
-        distro: ${{ matrix.distro }}
+        distro: oracle_open_jdk
     - name: java -version
       run: java -version
       
@@ -40,18 +39,17 @@ jobs:
       matrix:
         os: [macOS-latest]
         update: [x, 282, 275, 272, 265, 262, 252, 242, 232, 222, 212, 202, 201, 192, 181, 172, 163, 162, 152, 144, 131, 121, 112, 102, 92, 91, 72, 71, 66, 65, 60, 51, 45, 31, 25, 20, 11]
-        distro: [zulu, aoj, liberica]
       fail-fast: false
       max-parallel: 5
-    name: Mac-JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}, ${{ matrix.distro }}
+    name: Mac-JDK 8.0.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up JDK
+    - name: Set up JDK 8 OracleOpenJDK
       uses: foojay2020/setup-java@disco
       with:
         java-version: 8.0.${{ matrix.update }}
-        distro: ${{ matrix.distro }}
+        distro: oracle_open_jdk
     - name: java -version
       run: java -version
 
@@ -62,18 +60,17 @@ jobs:
       matrix:
         os: [ubuntu-18.04, windows-2016, macOS-latest]
         update: [x, 282, 275, 272, 265, 262, 252, 242, 232, 222, 212]
-        distro: [zulu, aoj, liberica]
       fail-fast: false
       max-parallel: 6
-    name: JRE 8.0.${{ matrix.update }}, ${{ matrix.os }}, ${{ matrix.distro }}
+    name: JRE 8.0.${{ matrix.update }}, ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up JDK
+    - name: Set up JDK 8 OracleOpenJDK
       uses: foojay2020/setup-java@disco
       with:
         java-package: jre
         java-version: 8.0.${{ matrix.update }}
-        distro: ${{ matrix.distro }}
+        distro: oracle_open_jdk
     - name: java -version
       run: java -version
