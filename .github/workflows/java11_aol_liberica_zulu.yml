@@ -1,9 +1,9 @@
-name: Java11
+name: Java11_AOJ_Liberica_Zulu
 
 on:
   push:
     paths:
-      - '*/*/java11.yml'
+      - '*/*/java11_aoj_liberica_zulu.yml'
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '15 */3 * * *'
@@ -16,12 +16,13 @@ jobs:
         os: [ubuntu-18.04, macOS-latest, windows-2016]
         update: [x, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
         package: [jdk, jre]
+        distro: [aoj, liberica, zulu]
         exclude:
           - {package: jre, update: 1}
           - {package: jre, update: 2}
       fail-fast: false
       max-parallel: 5
-    name: ${{ matrix.package }} 11.0.${{ matrix.update }}, ${{ matrix.os }}
+    name: ${{ matrix.package }} 11.0.${{ matrix.update }}, ${{ matrix.os }}, ${{ matrix.distro }}
 
     steps:
     - uses: actions/checkout@v1
@@ -30,5 +31,6 @@ jobs:
       with:
         java-package: ${{ matrix.package }}
         java-version: 11.0.${{ matrix.update }}
+        distro: ${{ matrix.distro }}
     - name: java -version
       run: java -version

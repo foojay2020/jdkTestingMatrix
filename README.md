@@ -25,6 +25,17 @@ EA JDK Matrix status:
 [![Java CI17](https://github.com/foojay2020/jdkTestingMatrix/workflows/Java17/badge.svg)](https://github.com/foojay2020/jdkTestingMatrix/actions)
 
 
+Full JDK 8 Updates (entire history) AOJ, Liberica, Zulu
+
+[![Java CI8 AOJ Liberica Zulu](https://github.com/foojay2020/jdkTestingMatrix/workflows/Java8_AOJ_Liberica_Zulu/badge.svg)](https://github.com/foojay2020/jdkTestingMatrix/actions)
+
+
+Full JDK 11 Updates (entire history) AOJ, Liberica, Zulu
+
+[![Java CI11 AOJ Liberica Zulu](https://github.com/foojay2020/jdkTestingMatrix/workflows/Java11_AOJ_Liberica_Zulu/badge.svg)](https://github.com/foojay2020/jdkTestingMatrix/actions)
+
+
+
 Full JDK 8 Updates (entire history) per distribution:
 
 [![Java CI8 AOJ](https://github.com/foojay2020/jdkTestingMatrix/workflows/Java8_AOJ/badge.svg)](https://github.com/foojay2020/jdkTestingMatrix/actions)
