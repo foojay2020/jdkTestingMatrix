@@ -26,7 +26,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Set up JDK 11 OJDK Build
-      uses: foojay2020/setup-java@disco
+      uses: foojay2020/setup-java@adb2754170f8abe568d01d706a0927e606419852
       with:
         java-package: ${{ matrix.package }}
         java-version: 11.0.${{ matrix.update }}
